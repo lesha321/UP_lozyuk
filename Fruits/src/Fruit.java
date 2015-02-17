@@ -1,5 +1,5 @@
 
-public class Fruit implements Comparable<Fruit>{
+public class Fruit {
 	private String fruitName;
 	
 	public String getFruitName() {
@@ -15,13 +15,8 @@ public class Fruit implements Comparable<Fruit>{
 		if(this == other ) return true;
 		if(other == null || this.getClass() != other.getClass()) return false;
 		Fruit otherFruit = (Fruit)other;
-		if(this.compareTo(otherFruit) == 0 )
+		if(this.fruitName.compareTo(otherFruit.getFruitName()) == 0 )
 			return true;
 		return false;
-	}
-	@Override
-	public int compareTo(Fruit arg0) {
-		// TODO Auto-generated method stub
-		return fruitName.compareTo(arg0.getFruitName());
 	}
 }
