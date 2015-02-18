@@ -39,11 +39,11 @@ public class FileManipulator {
 			e.printStackTrace();
 		}
 	}
-	public void writeToFiles(){
+	public void writeToFiles(int result){
 		try{
 		    PrintWriter out = new PrintWriter(new File("juice1.out.txt").getAbsoluteFile());
 		    PrintWriter out1 = new PrintWriter(new File("juice2.out.txt").getAbsoluteFile());
-		    //PrintWriter out2 = new PrintWriter(new File("juice3.out.txt").getAbsoluteFile());
+		    PrintWriter out2 = new PrintWriter(new File("juice3.out.txt").getAbsoluteFile());
 		    try{
 		    	for (String juice : set) {
 					out.println(juice);
@@ -51,9 +51,11 @@ public class FileManipulator {
 		    	for (String juice : list) {
 		    		out1.println(juice);
 					}
+		    	out2.println(result);
 		    	}finally {
 		        	out.close();
 		            out1.close();
+		            out2.close();
 		        }
 		        }catch(IOException e) {
 		          throw new RuntimeException(e);
